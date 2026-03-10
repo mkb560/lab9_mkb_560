@@ -2,10 +2,10 @@
 .env
 openAIkey.env
 
-# Generated files — can be recreated by running the scripts
-pdf_data.db
-faiss_index_openai/
-faiss_index_opensource/
+# Generated files (tracked intentionally — remove lines below to exclude)
+# pdf_data.db
+# faiss_index_openai/
+# faiss_index_opensource/
 
 # Python cache
 __pycache__/
