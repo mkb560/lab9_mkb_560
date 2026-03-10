@@ -1,0 +1,16 @@
+# API keys — never commit
+.env
+openAIkey.env
+
+# Generated files — can be recreated by running the scripts
+pdf_data.db
+faiss_index_openai/
+faiss_index_opensource/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+.claude/
