@@ -42,5 +42,4 @@ ollama run llama3
 | `vectorstore_builder.py` | Converts text chunks into vector embeddings (using either OpenAI or `BAAI/bge-small-en-v1.5`) and persists them to local FAISS indices. |
 | `conversation_chain.py` | Acts as the core RAG engine by connecting the FAISS vector store to the selected LLM and managing multi-turn chat history via `ConversationBufferMemory`. |
 | `app.py` | The Flask backend API that manages user sessions and bridges the frontend UI with the Python extraction and conversation logic via `/upload` and `/ask` routes. |
-| `App_p1.py` / `App_p2.py` | Driver scripts providing a CLI loop to test the Part 1 (OpenAI) and Part 2 (Open-Source) pipelines directly. |
 | `index.html`, `style.css`, `script.js` | Powers the Single Page Application (SPA), handling asynchronous file uploads, dynamic chat window updates, and the high-contrast black-and-white UI. |
