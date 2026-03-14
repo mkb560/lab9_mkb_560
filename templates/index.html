@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Q&A Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2>Document Upload</h2>
+            <p>Select single or multiple PDFs to automatically upload and analyze them.</p>
+            <input type="file" id="pdf-upload" multiple accept=".pdf" class="file-input">
+            <div id="upload-status" class="status-message"></div>
+        </aside>
+        <main class="chat-container">
+            <header class="chat-header">
+                <h2>Q&A Chatbot</h2>
+            </header>
+            
+            <div id="chat-window" class="chat-window">
+                <div class="message bot-message">
+                    <div class="bubble">Hello! Please select your PDFs in the sidebar, then ask me anything about them!</div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Ask a question about your PDFs..." />
+                <button id="send-btn" class="primary-btn">Send</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

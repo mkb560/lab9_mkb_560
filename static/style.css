@@ -1,0 +1,201 @@
+:root {
+    /* High-Contrast Flat B&W Palette */
+    --pure-white: #ffffff;
+    --ink-black: #000000;
+    --ink-grey: #555555;
+    --border-width: 2px;
+}
+
+* {
+    box-sizing: border-box;
+    /* Serif font to maintain the print/ink feel */
+    font-family: 'Georgia', 'Times New Roman', serif; 
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--pure-white); /* Pure white background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Application Container */
+.app-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background-color: var(--pure-white);
+    border: var(--border-width) solid var(--ink-black);
+    box-shadow: none; /* Removed shadow */
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px;
+    background-color: var(--pure-white);
+    border-right: var(--border-width) solid var(--ink-black);
+    color: var(--ink-black);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 { 
+    margin-top: 0; 
+    font-size: 1.6rem; 
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--ink-black);
+    padding-bottom: 10px;
+}
+
+.sidebar p { 
+    font-size: 0.95rem; 
+    color: var(--ink-grey); 
+    line-height: 1.5; 
+}
+
+.file-input { 
+    margin-bottom: 10px; 
+    color: var(--ink-black); 
+    font-size: 0.9rem;
+    font-family: monospace; 
+}
+
+/* Status Messages for Uploads  */
+.status-message { 
+    font-size: 1rem; 
+    margin-top: 10px; 
+    min-height: 20px; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.analyzing { color: var(--ink-black); animation: blink 1.5s infinite; }
+.success { color: var(--ink-black); border-bottom: 2px dashed var(--ink-black); display: inline-block; }
+.error { color: var(--pure-white); background-color: var(--ink-black); padding: 5px; }
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* Chat Area Styling */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--pure-white);
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: var(--border-width) solid var(--ink-black);
+    background: var(--pure-white);
+}
+
+.chat-header h2 { 
+    margin: 0; 
+    color: var(--ink-black); 
+    font-size: 1.5rem; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Chat Bubbles */
+.message { display: flex; max-width: 75%; }
+.message.user-message { align-self: flex-end; }
+.message.bot-message { align-self: flex-start; }
+
+.bubble {
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    border-radius: 0; 
+    box-shadow: none; 
+
+/* User Message: Solid Black Block (High Contrast) */
+.user-message .bubble {
+    background-color: var(--ink-black);
+    color: var(--pure-white);
+    border: var(--border-width) solid var(--ink-black);
+}
+
+/* Bot Message: Hollow Outlined Box */
+.bot-message .bubble {
+    background-color: var(--pure-white);
+    color: var(--ink-black);
+    border: var(--border-width) solid var(--ink-black);
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    padding: 20px;
+    border-top: var(--border-width) solid var(--ink-black);
+    background: var(--pure-white);
+    gap: 15px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 14px 20px;
+    background-color: var(--pure-white);
+    color: var(--ink-black);
+    border: var(--border-width) solid var(--ink-black);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+    box-shadow: none; 
+}
+
+#user-input::placeholder {
+    color: var(--ink-grey);
+    font-style: italic;
+}
+
+#user-input:focus { 
+    background-color: #f9f9f9; 
+}
+
+/* Buttons */
+.primary-btn {
+    background-color: var(--pure-white);
+    color: var(--ink-black);
+    border: var(--border-width) solid var(--ink-black);
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    box-shadow: none; 
+}
+
+.primary-btn:hover { 
+    background-color: var(--ink-black); 
+    color: var(--pure-white);
+}
+
+.primary-btn:disabled { 
+    border-color: var(--ink-grey); 
+    color: var(--ink-grey);
+    cursor: not-allowed; 
+}
+}
